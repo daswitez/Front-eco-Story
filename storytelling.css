@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+
+:root {
+  --dark-green: #2e7d32;
+  --light-green: #a5d6a7;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --gray-text: #616161;
+  --highlight: #81c784;
+  --green-forest: #1e5631;
+  --green-light: #a3d9a5;
+  --green-bright: #2ecc71;
+  --gray-light: #f7f7f7;
+  --white: #ffffff;
+  --brown-earth: #7b5e57;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(
+    to right,
+    #f5f5f5 10%,
+    #d8ecd9 30%,
+    #d8ecd9 70%,
+    #f5f5f5 90%
+  );
+  background-attachment: fixed;
+  margin: 0;
+  background: var(--light-gray);
+  color: var(--gray-text);
+}
+
+header {
+  background: var(--white);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green-forest);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--green-forest);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--green-forest);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 4px 15px rgba(30, 86, 49, 0.2);
+}
+
+.primary-btn:hover {
+  background: var(--green-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid var(--green-forest);
+  color: var(--green-forest);
+}
+
+.secondary-btn:hover {
+  background: var(--green-forest);
+  color: var(--white);
+}
+
+.interactive-section {
+  padding: 4rem 2rem;
+  background: var(--white);
+}
+
+.text-content {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  color: var(--gray-text);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prev-btn,
+.next-btn {
+  background: var(--dark-green);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: var(--highlight);
+}
+
+.hover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+.grid-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+.grid-item::after {
+  content: attr(data-info);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover::after {
+  opacity: 1;
+}
+
+footer {
+  background: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+/* Espacio Informativo */
+.informative-section {
+  background: #f5f5f5;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.informative-section h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+
+.informative-section p {
+  font-size: 1.2rem;
+  color: #616161;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Beneficios de Donar */
+.benefits-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+}
+
+.benefits-section h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.benefit-item img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.benefit-item h3 {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: #616161;
+}
+
+.benefit-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
